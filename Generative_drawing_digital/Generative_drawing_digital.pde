@@ -1,3 +1,4 @@
+//window size
 size(300, 350);
 
 background(215, 239, 237);
