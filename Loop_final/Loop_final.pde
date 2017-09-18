@@ -64,7 +64,7 @@ void draw() {
       fill(234, 49, 73, 35);
     } else {
       //text when mouse not clicked
-      println("click with mouse");
+      println("Imagine the sun rising above lustrous ocean waves.");
 
 //unpressed mouse
     }
@@ -72,7 +72,7 @@ void draw() {
       fill(252, 208, 133, 30);
     } else {   
       //text when clicked
-      println("Sucess!");
+        println("See the sun fall and dip into fathomless crimson depths.");
     }
   }
 }
