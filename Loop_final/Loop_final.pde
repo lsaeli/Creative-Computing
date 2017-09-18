@@ -16,7 +16,7 @@ BrownNoise noise;
 
 void setup() {
   y = height * 1.5;
-  size(700, 500);
+  size(1700, 500);
   for (int i = 1; i < c.length; i++) {
   //where every set moves
     //A, moves to edge of screen
@@ -61,7 +61,7 @@ void draw() {
     
 //pressed mouse
     if (mousePressed == true) {
-      fill(234, 49, 73, 25);
+      fill(234, 49, 73, 35);
     } else {
       //text when mouse not clicked
       println("click with mouse");
