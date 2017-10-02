@@ -18,7 +18,9 @@ void setup() {
   size(1440, 1100);
   background(4, 7, 12); 
 
-  img=loadImage("space_tree01.jpg");
+animation1.display(1400, 1100);
+
+  img=loadImage("space_tree0000.jpg");
 
   file = new SoundFile(this, "midterm_music.wav");
   file.loop();
@@ -27,8 +29,8 @@ void setup() {
   println("SFSamples= " + file.frames() + " samples");
 
   smooth();
-  framerate(60);
-  animation1 = new Animation("space_tree", 132);
+  frameRate(60);
+  animation1 = new Animation("space_tree", 66);
   ypos = height * 0.25;
 
   f = createFont("cochin", 24, true);
@@ -76,7 +78,7 @@ class Animation {
     image = new PImage[imageCount];
 
     for (int i = 0; i < imageCount; i++) {
-      String filename = imagePrefix + nf(i, 2) + ".jpg";
+      String filename = imagePrefix + nf(i, 4) + ".jpg";
       image[i] = loadImage(filename);
     }
   }
