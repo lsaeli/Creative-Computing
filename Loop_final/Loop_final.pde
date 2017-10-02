@@ -18,7 +18,7 @@ void setup() {
   y = height * 1.5;
   size(1700, 500);
   for (int i = 1; i < c.length; i++) {
-  //where every set moves
+    //where every set moves
     //A, moves to edge of screen
     noStroke();
     a [i] = random(width);
@@ -35,7 +35,7 @@ void setup() {
 
   frameRate(28);
 
-//play noise @ start
+  //play noise @ start
   noise = new BrownNoise(this);
   noise.play();
 }      
@@ -44,7 +44,7 @@ void draw() {
 
   background(2, 2, 51, 10);
 
-//set each layer of ellipses
+  //set each layer of ellipses
   for (int i =0; i < a.length; i++) {
 
     if (a[i] > width || a[i] < 0) {
@@ -54,26 +54,25 @@ void draw() {
       d[i] = -d[i];
     }
 
-//last two numbers set ellipse portions, width then height
+    //last two numbers set ellipse portions, width then height
     ellipse(a[i], b[i], 530, 13);
     a[i] = a[i] + c[i]; 
     b[i] = b[i] + d[i];
-    
-//pressed mouse
+
+    //pressed mouse
     if (mousePressed == true) {
       fill(234, 49, 73, 35);
     } else {
       //text when mouse not clicked
       println("Imagine the sun rising above lustrous ocean waves.");
 
-//unpressed mouse
+      //unpressed mouse
     }
     if (mousePressed == false) {
       fill(252, 208, 133, 30);
     } else {   
       //text when clicked
-        println("See the sun fall and dip into fathomless crimson depths.");
+      println("See the sun fall and dip into fathomless crimson depths.");
     }
   }
 }
-  
