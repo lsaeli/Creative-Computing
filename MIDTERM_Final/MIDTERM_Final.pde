@@ -1,77 +1,103 @@
-Animation animation1;
-
-import processing.sound.*;
-SoundFile file;
-
-PFont f;
-
-PImage img;
-
-//strings
-String[] words;
-int index;
-int[] data;
+import processing.video.*;
+Movie myMovie;
 
 void setup() {
   size(1440, 1100);
-  background(0);
-  img = loadImage("space_tree0000.jpg");
-  file = new SoundFile(this, "midterm_music.wav");
-  file.loop();  
-  file.rate(.678);
-
-  f = createFont("cochin", 24, true);
-  textAlign(RIGHT);
-  textFont(f);
-  textSize(24);
-  text("Stars sway and shatter on the Midnight Moon\ntheir trails scintillate, shaken by eternal winds." 
-    , width*0.9, height*0.5+85);
-  //width: 0.1=closer to left. height: 0.1=closer to top
-
-  frameRate(30);
-  animation1 = new Animation("space_tree", 66);
+  myMovie = new Movie(this, "space_tree_final.mp4");
+  myMovie.loop();
   
-  
-  String[] lines = loadStrings("poem.txt");
-  String entireplay = join(lines, "");
-  println(entireplay);
-  println("there are " + lines.length + " lines");
-  for (int i = 0; i < lines.length; i++) {
-    println(lines[i]);
-  }
-}      
-
+}
 
 void draw() {
-  image(img, 0, 0, 1440, 860);
+  image(myMovie, 0,0,width,height-200);
+ 
+}
 
-fill(255, 251, 191);
-  textAlign(RIGHT);
-  textFont(f);
-  textSize(24);
-  text("Stars sway and shatter on the Midnight Moon\ntheir trails scintillate, shaken by eternal winds." 
-    , width*0.9, height*0.5+85);
-  //width: 0.1=closer to left. height: 0.1=closer to top
-  //}
-  // animation1.display (x, y);
+// Called every time a new frame is available to read
+void movieEvent(Movie m) {
+  m.read();
 }
 
 
-class Animation {
-  PImage[] image;
-  int imageCount;
-  int frame;
 
-  Animation(String imagePrefix, int count) {
-    imageCount = count;
-    image = new PImage[imageCount];
 
-    for (int i = 0; i < imageCount; i++) {
-      String filename = imagePrefix + nf(i, 4) + ".jpg";
-      image[i] = loadImage(filename);
-    }
-  }
-}
+
+
+////october 2nd work
+//Animation animation1;
+
+//import processing.sound.*;
+//SoundFile file;
+
+//PFont f;
+
+//PImage img;
+
+////strings
+//String[] words;
+//int index;
+//int[] data;
+
+//void setup() {
+//  size(1440, 1100);
+//  background(0);
+//  img = loadImage("space_tree0000.jpg");
+//  file = new SoundFile(this, "midterm_music.wav");
+//  file.loop();  
+//  file.rate(.678);
+
+//  f = createFont("cochin", 24, true);
+//  textAlign(RIGHT);
+//  textFont(f);
+//  textSize(24);
+//  text("Stars sway and shatter on the Midnight Moon\ntheir trails scintillate, shaken by eternal winds." 
+//    , width*0.9, height*0.5+85);
+//  //width: 0.1=closer to left. height: 0.1=closer to top
+
+//  frameRate(30);
+//  animation1 = new Animation("space_tree", 66);
+  
+  
+//  String[] lines = loadStrings("poem.txt");
+//  String entireplay = join(lines, "");
+//  println(entireplay);
+//  println("there are " + lines.length + " lines");
+//  for (int i = 0; i < lines.length; i++) {
+//    println(lines[i]);
+//  }
+//}      
+
+
+//void draw() {
+//  image(img, 0, 0, 1440, 860);
+
+//fill(255, 251, 191);
+//  textAlign(RIGHT);
+//  textFont(f);
+//  textSize(24);
+//  text("Stars sway and shatter on the Midnight Moon\ntheir trails scintillate, shaken by eternal winds." 
+//    , width*0.9, height*0.5+85);
+//  //width: 0.1=closer to left. height: 0.1=closer to top
+//  //}
+//  // animation1.display (x, y);
+//}
+
+
+//class Animation {
+//  PImage[] image;
+//  int imageCount;
+//  int frame;
+
+//  Animation(String imagePrefix, int count) {
+//    imageCount = count;
+//    image = new PImage[imageCount];
+
+//    for (int i = 0; i < imageCount; i++) {
+//      String filename = imagePrefix + nf(i, 4) + ".jpg";
+//      image[i] = loadImage(filename);
+//    }
+//  }
+//}
 
 
 //Animation animation1;
